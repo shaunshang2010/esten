@@ -1,0 +1,17 @@
+$main-red: #E53935;
+$sub-red: #E57373;
+body {
+	color: $grey_800;
+}
+.banner {
+	> .logo { background-image: url(logo.png); }
+	> .nav > li > a {
+		color: $grey_800;
+		&:hover { color: $sub-red; }
+	}
+}
+.main-body {
+	section[name="slide-show"] {
+		background: red;
+	}
+}

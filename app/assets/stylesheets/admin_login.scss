@@ -1,0 +1,64 @@
+@import 'toolbox_esten';
+
+$main-red: #E53935;
+$sub-red: #E57373;
+
+.login_form {
+	@extend .vm;
+	@include size(500px, 600px);
+	> .logo {
+		@include size(140px, 140px);
+		margin: 20px auto;
+		background: url(logo.png) no-repeat center center;
+		background-size: 140px;
+	}
+	> .title {
+		margin-bottom: 30px;
+		text-align: center;
+		h1 {
+			font-size: 20px;
+			margin-bottom: 4px;
+		}
+		h4 {
+			font-size: 13px;
+		}
+	}
+	input[type="text"],
+	input[type="password"],
+	input[type="submit"] {
+		@include size(300px, 34px);
+		@include box-sizing(border-box);
+		display: block;
+		padding: 0 4px;
+		margin: 10px auto;
+		font-size: 14px;
+		border: solid 1px $grey_400;
+		color: $grey_700;
+		&:focus {
+			border: solid 1px $blue_400;
+			outline: 0;
+		}
+	}
+	input[type="submit"] {
+		padding: 0;
+		margin: 20px auto 10px;
+		color: #FFFFFF;
+		border: solid 1px $sub-red;
+		background-color: $sub-red;
+		cursor: pointer;
+		-webkit-appearance: button;
+						appearance: button;
+		&:hover {
+			border: solid 1px $main-red;
+			background-color: $main-red;
+		}
+	}
+	.forgot_pass {
+		margin-left: 100px;
+		&:hover { text-decoration: underline; }
+	}
+	.return_home {
+		margin-right: 100px;
+		&:hover { text-decoration: underline; }
+	}
+}

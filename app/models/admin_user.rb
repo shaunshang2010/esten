@@ -4,7 +4,8 @@ class AdminUser < ApplicationRecord
 	before_save { username.downcase! }
 	
 	validates :username, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
+	validates :password, presence: true, length: { minimum: 6 }
 	validates :first_name, length: { maximum: 25 }
 	
-	# has_secure_password
+	has_secure_password
 end

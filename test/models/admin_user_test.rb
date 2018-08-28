@@ -6,7 +6,7 @@ class AdminUserTest < ActiveSupport::TestCase
   # end
   
   def setup
-  	@admin = AdminUser.new(username: "test@hotmail.com", first_name: "Test", last_name: "User")
+  	@admin = AdminUser.new(username: "test@hotmail.com", first_name: "Test", last_name: "User", password: "foobar", password_confirmation: "foobar")
   end
   
   test "should be valid" do
@@ -48,6 +48,15 @@ class AdminUserTest < ActiveSupport::TestCase
   	assert_not duplicate_admin.valid?
   end
   
+  test "password should be presence (nonblank)" do
+   @admin.password = @admin.password_confirmation = " " * 6
+   assert_not @admin.valid? 
+  end
+  
+  test "password should have a minimum length" do
+    @admin.password = @admin.password_confirmation = "a" * 5
+    assert_not @admin.valid?
+  end
   # test "username should be saved as lower-case" do
   # 	mixed_case_username = "Foo@ExAMPle.CoM"
   # 	@admin.email = mixed_case_username

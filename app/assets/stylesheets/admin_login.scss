@@ -3,6 +3,7 @@
 $main-red: #E53935;
 $sub-red: #E57373;
 
+.container { padding: 0; }
 .login_form {
 	@extend .vm;
 	@include size(500px, 600px);
@@ -23,7 +24,7 @@ $sub-red: #E57373;
 			font-size: 13px;
 		}
 	}
-	input[type="text"],
+	input[type="email"],
 	input[type="password"],
 	input[type="submit"] {
 		@include size(300px, 34px);
@@ -60,5 +61,33 @@ $sub-red: #E57373;
 	.return_home {
 		margin-right: 100px;
 		&:hover { text-decoration: underline; }
+	}
+}
+.admin_banner {
+	@include size(100%, 50px);
+	background: $grey_200;
+	border-bottom: solid 1px $grey_300;
+	> .logo {
+		@include size(350px, 50px);
+		@include box-sizing(border-box);
+		padding-left: 40px;
+		background: url(logo.png) no-repeat left center;
+		background-size: 40px;
+		h1 {
+			line-height: 32px;
+			font-size: 20px;
+		}
+		h4 { font-size: 12px; }
+	}
+	> .controls > li {
+		@extend .inline-middle;
+		> a {
+			@include box-sizing(border-box);
+			display: block;
+			line-height: 50px;
+			padding: 0 40px;
+			cursor: pointer;
+			&:hover { text-decoration: underline; }
+		}
 	}
 }

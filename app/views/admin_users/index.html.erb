@@ -1,0 +1,36 @@
+<div class="section">
+	<div class="section-head">
+		<h1 class="left">管理员账号</h1>
+		<ul class="controls right">
+			<li>
+				<%= link_to "新建管理员", signup_path, class: "btn square normal" %>
+			</li>
+		</ul>
+		<div class="clear"></div>
+	</div>
+	<div class="section-body">
+		<table class="table table-bordered table-striped table-hover">
+			<colgroup>
+				<col width="15%">
+				<col width="70%">
+				<col width="15%">
+			</colgroup>
+			<thead>
+				<tr>
+					<th class="text-left">姓名</th>
+					<th class="text-left">用户名</th>
+					<th class="text-left">操作</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% @admins.each do |admin| %>
+					<tr>
+						<td><%= admin.last_name%> <%= admin.first_name%></td>
+						<td><%= admin.username %></td>
+						<td></td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+</div>

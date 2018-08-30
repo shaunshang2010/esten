@@ -1,7 +1,5 @@
 class AdminPagesController < ApplicationController
 	def index
-	end
-	
-	def admin_login
+		redirect_to admin_users_path
 	end
 end

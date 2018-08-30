@@ -4,8 +4,12 @@ Rails.application.routes.draw do
 	# resources :admin_pages
 	
   root		'home_pages#index'
-  get			'/admin_login',				to: 'admin_pages#admin_login'
-  get			'/login',							to: 'sessionss#new'
-  post		'/login',							to: 'sessions#create'
-  delete	'/logout',						to: 'sessions#destroy'
+  get			'/signup',									to: 'admin_users#new'
+  get			'/admin_login',							to: 'sessions#new'
+  post		'/admin_login',							to: 'sessions#create'
+  delete	'/admin_logout',						to: 'sessions#destroy'
+  get     '/admin_home',              to: 'admin_pages#index'
+  
+  resources :admin_users
+  
 end

@@ -1,0 +1,18 @@
+<div class="admin_banner">
+  <div class="logo left">
+    <h1>沈阳亿斯腾科技咨询服务有限公司</h1>
+    <h4>Esten Technology Consulting Services Co., Ltd.</h4>
+  </div>
+  <ul class="controls right">
+    <li>
+      <%= link_to "首页", root_path, target: "blank" %>
+    </li>
+    <li>
+      <%= link_to  "管理员", admin_users_path %>
+    </li>
+    <li>
+      <%= link_to  "退出", admin_logout_path, method: :delete %>
+    </li>
+  </ul>
+  <div class="clear"></div>
+</div>

@@ -1,0 +1,33 @@
+<div class="span6" style="margin: 0 auto">
+  <%= render 'shared/error_messages' %>
+  <%= form_for(@admin) do |f| %>
+    <div>
+      <%= f.label :username, class: "span12" %>
+      <%= f.email_field :username %>
+    </div>
+    <br>
+    <div>
+      <%= f.label :first_name, class: "span12" %>
+      <%= f.text_field :first_name %>
+    </div>
+    <br>
+    <div>
+      <%= f.label :last_name, class: "span12" %>
+      <%= f.text_field :last_name %>
+    </div>
+    <br>
+    <div>
+      <%= f.label :password, class: "span12" %>
+      <%= f.password_field :password %>
+    </div>
+    <br>
+    <div>
+      <%= f.label :password_confirmation, "Confirmation", class: "span12" %>
+      <%= f.password_field :password_confirmation %>
+    </div>
+    <br>
+    <div>
+      <%= f.submit "Create my account" %>
+    </div>
+  <% end %>
+</div>

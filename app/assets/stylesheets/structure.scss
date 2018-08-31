@@ -1,50 +1,67 @@
-.container {
-	@include box-sizing(border-box);
-	padding: 25px 25px 10px 25px;
-}
+body { min-width: 1280px; }
 .banner {
+	@include size(100%, 100px);
+	position: absolute;
+	padding: 20px 0;
+	z-index: 1000;
 	> .logo {
-		@include size(50px, 50px);
+		@include size(100px, 100px);
 		background-repeat: no-repeat;
-		background-position: top left;
+		background-position: 20px top;
 		background-size: 100%;
 	}
 	> .title {
-		width: 300px;
-		height: 50px;
+		width: 460px;
+		height: 100px;
 		h1, h4 { user-select: none; }
 		h1 {
+			@include font(30px, 400);
 			line-height: 32px;
-			font-size: 20px;
+			margin-top: 22px;
 		}
-		h4 {
-			font-size: 12px;
-		}
+		h4 { @include font(20px, 400); }
 	}
 	> .nav {
 		display: block;
 		> li {
-			@extend .inline-middle;
+			@extend .inline-top;
 			> a {
-				@include line-height(50px, 50px);
+				@include line-height(100px, 100px);
+				@include transition(0.2s);
 				display: block;
 				margin-right: 80px;
-				font-size: 16px;
+				font-size: 20px;
 				text-align: center;
+				// &:hover {
+				// 	&, &:before {
+				// 		line-height: 105px;
+				// 	}
+				// }
 			}
 			[class^="icon-"]:before, 
 			[class*=" icon-"]:before {
+				// @include transition(0.2s);
 				float: left;
-				line-height: 50px;
+				line-height: 100px;
 				margin-right: 4px;
 			}
 		}
 	}
 }
 .main-body {
-	height: calc(100% - 85px);
-	margin-top: 25px;
-	section[name="slide-show"] {
-		@include size(100%, 100%);
+	section[name="home"] {
+		position: relative;
+		min-height: 100vh;
+		background-repeat: no-repeat;
+		background-position: top left;
+		background-size: 1920px auto;
+		.slogan {
+			@extend .vm;
+			@include size(800px, 50px);
+			h1 {
+				@include font(50px, 500);
+				text-align: center;
+			}
+		}
 	}
 }

@@ -3,7 +3,6 @@
 $main-red: #E53935;
 $sub-red: #E57373;
 
-.container { padding: 0; }
 .login_form {
 	@extend .vm;
 	@include size(500px, 600px);

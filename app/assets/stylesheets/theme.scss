@@ -5,13 +5,26 @@ body {
 }
 .banner {
 	> .logo { background-image: url(logo.png); }
+	> .title * {
+		color: #FFFFFF;
+		text-shadow: 0 1px 3px #000000;
+	}
 	> .nav > li > a {
-		color: $grey_800;
-		&:hover { color: $sub-red; }
+		color: #FFFFFF;
+		text-shadow: 0 1px 3px #000000;
+		&:hover {
+			color: $sub-red;
+			text-shadow: 0 1px 3px #000000;
+		}
 	}
 }
 .main-body {
-	section[name="slide-show"] {
-		background: red;
+	section[name="home"] {
+		background-image: url(home_page_bg.png);
+		// background-color: $grey_900;
+		.slogan h1 {
+			color: #FFFFFF;
+			text-shadow: 0 1px 3px #000000;
+		}
 	}
 }

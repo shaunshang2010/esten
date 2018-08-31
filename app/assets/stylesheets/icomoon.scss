@@ -24,7 +24,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-[data-icon="home"]:before { content: "\e900"; }
-[data-icon="file-text"]:before { content: "\e922"; }
-[data-icon="users"]:before { content: "\e972"; }
-[data-icon="info"]:before { content: "\ea0c"; }
+[data-icon="home"]:before             { content: "\e900"; }
+[data-icon="file-text"]:before        { content: "\e922"; }
+[data-icon="drawer"]:before           { content: "\e95c"; }
+[data-icon="users"]:before            { content: "\e972"; }
+[data-icon="user-tie"]:before         { content: "\e976"; }
+[data-icon="info"]:before             { content: "\ea0c"; }

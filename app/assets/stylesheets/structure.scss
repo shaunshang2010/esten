@@ -1,4 +1,6 @@
-body { min-width: 1280px; }
+body {
+	font-family: "Helvetica Neue", "Microsoft YaHei", Helvetica, Arial, sans-serif;
+}
 .banner {
 	@include size(100%, 100px);
 	position: absolute;
@@ -11,7 +13,7 @@ body { min-width: 1280px; }
 		background-size: 100%;
 	}
 	> .title {
-		width: 460px;
+		width: 470px;
 		height: 100px;
 		h1, h4 { user-select: none; }
 		h1 {
@@ -19,7 +21,7 @@ body { min-width: 1280px; }
 			line-height: 32px;
 			margin-top: 22px;
 		}
-		h4 { @include font(20px, 400); }
+		h4 { @include font(19px, 400); }
 	}
 	> .nav {
 		display: block;

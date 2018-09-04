@@ -1,0 +1,62 @@
+@media screen and (max-width: 1280px) {
+  $min_width: 1024px;
+  $banner_height: 60px;
+  body { min-width: $min_width; }
+  .banner {
+    @include size(100%, $banner_height);
+    > .logo { @include size($banner_height, $banner_height); }
+    > .title {
+      @include size(390px, $banner_height);
+      margin-left: 10px;
+      h1 {
+        margin-top: 6px;
+        font-size: 24px;
+      }
+      h4 { font-size: 16px; }
+    }
+    > .nav > li {
+      > a {
+        @include line-height($banner_height, $banner_height);
+        margin-right: 30px;
+        font-size: 18px;
+      }
+      [class^="icon-"]:before,
+      [class*=" icon-"]:before {
+        line-height: $banner_height;
+      }
+    }
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+  $min_width: 1024px;
+  $banner_height: 70px;
+  body { min-width: $min_width; }
+  .banner {
+    @include size(100%, $banner_height);
+    > .logo { @include size($banner_height, $banner_height); }
+    > .title {
+      @include size(450px, $banner_height);
+      margin-left: 10px;
+      h1 {
+        margin-top: 11px;
+        font-size: 28px;
+      }
+      h4 { font-size: 19px; }
+    }
+    > .nav > li {
+      > a {
+        @include line-height($banner_height, $banner_height);
+        margin-right: 40px;
+        font-size: 18px;
+      }
+      [class^="icon-"]:before,
+      [class*=" icon-"]:before {
+        line-height: $banner_height;
+      }
+    }
+  }
+}
+@media screen and (min-width: 1440px) {
+  $min_width: 1280px;
+  body { min-width: $min_width; }
+}

@@ -1,6 +1,9 @@
 body {
 	font-family: "Helvetica Neue", "Microsoft YaHei", Helvetica, Arial, sans-serif;
 }
+.container {
+	overflow: auto;
+}
 .banner {
 	@include size(100%, 100px);
 	position: absolute;
@@ -34,15 +37,9 @@ body {
 				margin-right: 80px;
 				font-size: 20px;
 				text-align: center;
-				// &:hover {
-				// 	&, &:before {
-				// 		line-height: 105px;
-				// 	}
-				// }
 			}
 			[class^="icon-"]:before, 
 			[class*=" icon-"]:before {
-				// @include transition(0.2s);
 				float: left;
 				line-height: 100px;
 				margin-right: 4px;
@@ -51,9 +48,11 @@ body {
 	}
 }
 .main-body {
-	section[name="home"] {
+	section {
 		position: relative;
 		min-height: 100vh;
+	}
+	section[name="home"] {
 		background-repeat: no-repeat;
 		background-position: top left;
 		background-size: 1920px auto;
@@ -64,6 +63,116 @@ body {
 				@include font(50px, 500);
 				text-align: center;
 			}
+		}
+		.icon-arrow_down {
+			@extend .vm;
+			@include size(60px, 60px);
+			@include border-radius(40px);
+			@include tblr-cust((top, auto), (bottom, 40px));
+			display: block;
+			line-height: 60px;
+			font-size: 30px;
+			text-align: center;
+		}
+	}
+	section[name="services"] {
+		> .title {
+			@include box-sizing(border-box);
+			padding: 100px 0;
+			h1, h4 { text-align: center; }
+			h1 {
+				margin: 0 0 30px 0;
+				font-size: 40px;
+			}
+			h4 { @include font(26px, 400); }
+		}
+		> .content {
+			margin-top: 40px;
+			text-align: center;
+			> div {
+				@extend .inline-middle;
+				@include size(180px, 180px);
+				@include border-radius(100px);
+				@include transition(0.2s);
+				position: relative;
+				margin: 0 40px;
+				cursor: pointer;
+				h1 {
+					@extend .vm;
+					@include size(100%, 30px);
+					@include font(24px, 400);
+					line-height: 30px;
+				}
+			}
+		}
+	}
+	section[name="about_us"] {
+		> div {
+			@include size(100%, 100%);
+			position: absolute;
+			top: 0;
+			left: 0;
+			&.bg {
+				@include opacity(8);
+				background-repeat: no-repeat;
+				background-position: center center;
+				background-size: cover;
+			}
+			&:not(.bg) {
+				> .title {
+					@include box-sizing(border-box);
+					padding: 100px 0;
+					z-index: 1;
+					h1, h4 { text-align: center; }
+					h1 {
+						margin: 0 0 30px 0;
+						font-size: 40px;
+					}
+					h4 { @include font(26px, 400); }
+				}
+				> .content {
+					text-align: center;
+					ul > li {
+						@extend .inline-top;
+						@include size(100px, 100px);
+						margin: 0 10px;
+						span { @include font(20px, 400); }
+					}
+				}
+			}
+		}
+	}
+	section[name="contact_us"] {}
+	section[name="footer"] {
+		min-height: auto;
+		height: 200px;
+		.nav, .contact {
+			> li {
+				@extend .inline-top;
+				> a,
+				> span {
+					@include line-height(60px, 60px);
+					display: block;
+					font-size: 16px;
+					text-align: center;
+				}
+			}
+		}
+		.nav {
+			margin-left: 40px;
+			> li {
+				> a { margin-right: 20px; }
+				[class^="icon-"]:before, 
+				[class*=" icon-"]:before {
+					float: left;
+					line-height: 60px;
+					margin-right: 4px;
+				}
+			}
+		}
+		.contact {
+			margin-right: 40px;
+			text-align: right;
 		}
 	}
 }

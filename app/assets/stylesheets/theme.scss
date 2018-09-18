@@ -21,10 +21,42 @@ body {
 .main-body {
 	section[name="home"] {
 		background-image: url(home_page_bg.jpg);
-		// background-color: $grey_900;
 		.slogan h1 {
 			color: #FFFFFF;
 			text-shadow: 0 1px 3px #000000;
 		}
+		.icon-arrow_down {
+			border: solid 2px #FFFFFF;
+			color: #FFFFFF;
+		}
+	}
+	section[name="services"] {
+		> .content {
+			> div {
+				background-color: $blue_500;
+				border: solid 4px $blue_500;
+				h1 { color: #FFFFFF; }
+				&:hover { @include box-shadow(inset 0 0 0 4px #FFFFFF); }
+			}
+		}
+	}
+	section[name="about_us"] {
+		background-color: $main-red;
+		> div {
+			&.bg { background-image: url(services_bg.jpg); }
+			> .title {
+				h1 { color: #FFFFFF; }
+			}
+			> .content {
+				ul > li { color: #FFFFFF; }
+			}
+		}
+	}
+	section[name="contact_us"] {}
+	section[name="footer"] {
+		background-color: $grey_900;
+		.nav > li > a,
+		.contact > li { color: $grey_600; }
+		
 	}
 }
